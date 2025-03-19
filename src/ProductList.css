@@ -107,9 +107,18 @@ body {
     margin-top: 10px;
 }
 
-.product-button:hover {
-    background-color: #c0392b;
+.product-button:hover:not(:disabled) {
+    background-color: #e74c3c;
+    transform: scale(1.1);
+    transition: transform 0.2s ease-in-out;
 }
+
+.product-button:disabled {
+    background-color: #aaa; /* Change to a grayish color */
+    cursor: not-allowed;
+}
+
+
 
 /* Pseudo-elements - Sale badge */
 .product-card::before {
@@ -160,9 +169,28 @@ body {
     width: 650px;
     font-size: 19px;
 }
+
+.cart svg {
+  width: 50px;
+  height: 50px;
+}
+
+.cart span {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: red;
+  color: white;
+  border-radius: 50%;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
 .cart{
     color: white;
     display: flex;
+    position: relative;
+    display: inline-block;
 }
 .cart_quantity_count{
     margin-top: 16px;
